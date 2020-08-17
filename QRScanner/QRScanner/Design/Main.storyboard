@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pxu-Rt-iJK">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ScannerVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ScannerVC" id="BYZ-38-t0r" customClass="ScannerVC" customModule="QRScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jSV-Zg-ru1" customClass="QRScannerView" customModule="QRScanner" customModuleProvider="target">
+                                <rect key="frame" x="20" y="64" width="335" height="251.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jSV-Zg-ru1" secondAttribute="height" multiplier="4:3" id="4nU-vL-cIv"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXB-ar-EfC">
+                                <rect key="frame" x="20" y="335.5" width="335" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQp-DH-eEy">
+                                <rect key="frame" x="20" y="617" width="335" height="30"/>
+                                <state key="normal" title="Open QR Code URL"/>
+                                <connections>
+                                    <action selector="btnOpenURLAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iic-rC-Rgl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="JXB-ar-EfC" firstAttribute="top" secondItem="jSV-Zg-ru1" secondAttribute="bottom" constant="20" id="0NK-no-8E5"/>
+                            <constraint firstItem="jSV-Zg-ru1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="0aM-IX-xo5"/>
+                            <constraint firstAttribute="trailing" secondItem="JXB-ar-EfC" secondAttribute="trailing" constant="20" id="1g4-ob-wGq"/>
+                            <constraint firstAttribute="trailing" secondItem="jSV-Zg-ru1" secondAttribute="trailing" constant="20" id="9Kv-yG-7T5"/>
+                            <constraint firstAttribute="trailing" secondItem="aQp-DH-eEy" secondAttribute="trailing" constant="20" id="Jdv-fh-KeR"/>
+                            <constraint firstItem="JXB-ar-EfC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Xg7-WQ-e87"/>
+                            <constraint firstItem="jSV-Zg-ru1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ypc-iC-g6G"/>
+                            <constraint firstItem="jSV-Zg-ru1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="dj9-vN-VKs"/>
+                            <constraint firstItem="aQp-DH-eEy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="f6H-Ru-kDd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aQp-DH-eEy" secondAttribute="bottom" constant="20" id="v36-Bo-qd7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bSY-Zm-MJM"/>
+                    <connections>
+                        <outlet property="lblInformation" destination="JXB-ar-EfC" id="bKa-5I-Gf9"/>
+                        <outlet property="vScanner" destination="jSV-Zg-ru1" id="pZt-yt-ze8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1071.2" y="112.89355322338831"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WGl-7a-Kzs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pxu-Rt-iJK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZyP-Wu-Bkr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ot5-be-rq5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EDA-Vc-xiJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="112.89355322338831"/>
+        </scene>
+    </scenes>
+</document>
